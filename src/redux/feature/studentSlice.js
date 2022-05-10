@@ -6,5 +6,16 @@ const studentSlice = createSlice({
     studentsList: [],
     student: {},
   },
+  reducers: {
+    getStudents(name) {
+      return name;
+    },
+    setStudents: (state, action) => {
+      state.studentsList = action.payload;
+    },
+  },
 });
+
+export const { getStudents, setStudents } = studentSlice.actions;
+
 export default studentSlice.reducer;

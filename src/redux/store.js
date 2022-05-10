@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import StudentReducer from "./feature/studentSlice";
-// import rootsaga from "./rootSaga";
+import rootSaga from "./feature/rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -12,5 +12,5 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(sagaMiddleware),
 });
-// sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 export default store;
